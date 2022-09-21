@@ -5,5 +5,9 @@
 #' @import shiny
 #' @noRd
 app_server <- function(input, output, session) {
-  # Your application server logic
+  vals <- reactiveValues()
+
+  mod_mod1_server("mod1_1")
+  mod_mod2_server("mod2_1")
+
 }

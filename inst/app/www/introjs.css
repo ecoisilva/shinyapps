@@ -1,0 +1,107 @@
+
+/* general */
+
+.introjs-overlay{
+ position: absolute;
+ z-index: 10000;
+ border: none;
+ background: none;
+ background-color: #000;
+ transition: all .3s ease-out;
+}
+
+.introjs-tooltip{
+  border: none;
+  background-color: #222d32;
+  max-width: 100%;
+  min-width: 494px; /* 476px */
+}
+
+.introjs-tooltipReferenceLayer * {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.introjs-tooltiptext {
+  padding: 0 52px 0 52px;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  text-align: justify;
+  color: #ffffff !important;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+/* buttons */
+
+.introjs-tooltipbuttons {
+  @extend .flex;
+  justify-content: flex-end;
+  background-color: #222d32 !important;
+  border: 0;
+}
+
+.introjs-button {
+  border-radius: 0;
+  background: #2c3b41 !important;
+  font: 13px/normal "Roboto Condensed", sans-serif;
+  color: #ffffff !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-shadow: none;
+}
+
+.introjs-nextbutton {
+  border: 1px solid #009688 !important;
+  box-shadow: none !important;
+  margin: 0 40px 20px 40px;
+}
+.introjs-prevbutton {
+  border: 1px solid #676767 !important;
+  box-shadow: none !important;
+  margin: 0 40px 20px 40px;
+}
+.introjs-donebutton {
+  border: 1px solid #686664 !important;
+  box-shadow: none !important;
+  margin: 0 40px 20px 40px;
+}
+
+.introjs-button:hover {
+    box-shadow: 0 0 4px rgba(#222d32, 0.5)!important;
+}
+
+.introjs-fixParent {
+    z-index: 99999999999999 !important;
+}
+
+.introjs-helperLayer {
+  position: absolute;
+  z-index: 10099;
+  background-color: transparent;
+  border: none;
+  border-radius: 0!important;
+  box-shadow: none;
+  transition: all .3s ease-out;
+}
+
+.introjs-helperNumberLayer {
+  background: none;
+  background-color: #2c3b41;
+  color: #ffffff,
+  font-size: 11px;
+  font-family: "Roboto Condensed", sans-serif;
+  text-shadow: none;
+}
+
+.introjs-arrow.left{
+  border-right-color: #009688;
+}
+.introjs-arrow.top{
+  border-bottom-color: #009688;
+}
+.introjs-arrow.bottom{
+  border-top-color: #009688;
+}
+.introjs-arrow.right, .introjs-arrow.right-bottom{
+  border-left-color: #009688;
+}

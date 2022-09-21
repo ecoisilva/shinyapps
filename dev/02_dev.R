@@ -18,10 +18,16 @@
 ## install.package('attachment') # if needed.
 attachment::att_amend_desc()
 
+usethis::use_import_from("ctmm", "%#%")
+usethis::use_import_from("dplyr", "%>%")
+usethis::use_import_from("ggplot2" ,"%+replace%")
+usethis::use_import_from("rlang", ".data")
+
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module(name = "name_of_module1", with_test = TRUE) # Name of the module
-golem::add_module(name = "name_of_module2", with_test = TRUE) # Name of the module
+golem::add_module(name = "mod1", with_test = TRUE) # Name of the module
+golem::add_module(name = "mod2", with_test = TRUE) # Name of the module
+golem::add_module(name = "comp_tour")
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
