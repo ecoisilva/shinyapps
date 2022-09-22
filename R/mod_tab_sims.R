@@ -31,14 +31,7 @@ mod_tab_sims_ui <- function(id) {
           align = "center", width = 12,
 
           p("Choose parameters that reflect your intended",
-            "study species, then click the",
-            icon("seedling", class = "cl-sea"),
-            span("Generate seed", class = "cl-sea"), "and",
-            icon("bolt", class = "cl-mdn"),
-            HTML(paste0(span("Run simulation", class = "cl-mdn"))),
-            "buttons (in that order). If needed, re-adjust any",
-            "value until you achieve a simulation that behaves",
-            "similarly to your study species.")
+            "study species.")
 
         ) # end of column (for text)
 
