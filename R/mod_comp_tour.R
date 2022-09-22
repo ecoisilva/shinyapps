@@ -31,18 +31,12 @@ mod_comp_tour_server <- function(id, vals) {
     build_mainTour <- function(ns, vals) {
       element <- intro <- character(0)
 
-      element <- c(element, "#Tour_start")
+      tab1 <- paste0("#tab_about_1", "-")
+      element <- c(element, paste0(tab1, "about_tour"))
       intro <- c(
         intro,
         HTML(paste(
-          "First box."
-        )))
-
-      element <- c(element, "#workflow-content")
-      intro <- c(
-        intro,
-        HTML(paste(
-          "Second box, referencing element in tab 1."
+          "First box, referencing element in tab 1."
         )))
 
       tab2 <- paste0("#tab_sims_1", "-")
@@ -50,7 +44,7 @@ mod_comp_tour_server <- function(id, vals) {
       intro <- c(
         intro,
         HTML(paste(
-          "Third box, referencing element in tab 2."
+          "Second box, referencing element in tab 2."
         )))
 
       data.frame(element = element,

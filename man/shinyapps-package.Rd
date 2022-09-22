@@ -13,8 +13,7 @@ PKG_DESC.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ecoisilva/shinyapps}
-  \item Report bugs at \url{https://github.com/ecoisilva/shinyapps/issues}
+  \item \url{https://ecoisilva.github.io/movedesign/}
 }
 
 }
