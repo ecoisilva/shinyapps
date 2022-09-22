@@ -7,7 +7,7 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
-mod_comp_tour_ui <- function(id){
+mod_comp_tour_ui <- function(id) {
   ns <- NS(id)
   tagList(
     actionButton(
@@ -22,13 +22,11 @@ mod_comp_tour_ui <- function(id){
 #' comp_tour Server Functions
 #'
 #' @noRd
-mod_comp_tour_server <- function(id){
-  moduleServer( id, function(input, output, session){
+mod_comp_tour_server <- function(id, vals) {
+  moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
     # Build tours: ------------------------------------------------------
-
-    add_action <- span("Action:", class = "tour-action")
 
     build_mainTour <- function(ns, vals) {
       element <- intro <- character(0)
@@ -37,21 +35,22 @@ mod_comp_tour_server <- function(id){
       intro <- c(
         intro,
         HTML(paste(
-          p("test1")
+          "First box."
         )))
 
-      element <- c(element, ".sidebar")
+      element <- c(element, "#workflow-content")
       intro <- c(
         intro,
         HTML(paste(
-          p("sidebar")
+          "Second box, referencing element in tab 1."
         )))
 
-      element <- c(element, "#mod_mod1_1-introbox1")
+      tab2 <- paste0("#tab_sims_1", "-")
+      element <- c(element, paste0(tab2, "sims_intro"))
       intro <- c(
         intro,
         HTML(paste(
-          p("test2")
+          "Third box, referencing element in tab 2."
         )))
 
       data.frame(element = element,
@@ -59,6 +58,9 @@ mod_comp_tour_server <- function(id){
                  stringsAsFactors = FALSE)
 
     } # end of main tour
+
+
+    # If 'guided tour' button is clicked:
 
     observe({
 
@@ -74,11 +76,15 @@ mod_comp_tour_server <- function(id){
         ),
         events = list(onbeforechange =
                         rintrojs::readCallback("switchTabs")))
+        # events = list(onbeforechange =
+        #                 I("rintrojs.callback.switchTabs(targetElement)")))
+
 
     }) %>% # observe event, bound to:
       bindEvent(input$default_tour)
 
-  })
+
+  }) # end of moduleServer
 }
 
 ## To be copied in the UI
@@ -86,3 +92,5 @@ mod_comp_tour_server <- function(id){
 
 ## To be copied in the server
 # mod_comp_tour_server("comp_tour_1")
+
+

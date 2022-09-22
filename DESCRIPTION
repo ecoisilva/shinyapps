@@ -1,28 +1,51 @@
 Package: shinyapps
 Title: PKG_TITLE
 Version: 0.0.0.9000
-Authors@R: 
-    person("AUTHOR_FIRST", "AUTHOR_LAST", , "AUTHOR@MAIL.COM", role = c("cre", "aut"))
+Authors@R: person('AUTHOR_FIRST', 'AUTHOR_LAST', email = 'AUTHOR@MAIL.COM', role = c('cre', 'aut'))
 Description: PKG_DESC.
 License: MIT + file LICENSE
-URL: https://github.com/ecoisilva/shinyapps
-BugReports: https://github.com/ecoisilva/shinyapps/issues
+URL: https://ecoisilva.github.io/movedesign/
+Depends: 
+    R (>= 3.5.0)
 Imports: 
+    bayestestR,
+    bsplus,
     config (>= 0.3.1),
-    ctmm,
+    crayon,
+    ctmm (>= 0.6.1),
+    ctmmweb,
+    data.table,
     dplyr,
+    fontawesome,
+    ggiraph,
     ggplot2,
-    golem (>= 0.3.3.9000),
+    golem (>= 0.3.2),
+    htmltools,
+    minpack.lm,
+    plyr,
+    reactable,
     rintrojs,
-    rlang,
-    shiny (>= 1.7.2),
+    scales,
+    shiny (>= 1.7.1),
+    shinyalert,
+    shinybusy,
+    shinycssloaders,
     shinydashboard,
-    shinydashboardPlus
+    shinydashboardPlus,
+    shinyFeedback,
+    shinyjs,
+    shinyWidgets,
+    stats,
+    stringr,
+    utils,
+    viridis
 Suggests: 
-    spelling,
-    testthat (>= 3.0.0)
+    knitr,
+    rmarkdown,
+    shinytest2
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
-Language: en-US
 LazyData: true
 RoxygenNote: 7.2.1

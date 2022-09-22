@@ -5,6 +5,7 @@
 \title{Run the Shiny Application}
 \usage{
 run_app(
+  title = "Test App",
   onStart = NULL,
   options = list(),
   enableBookmarking = NULL,

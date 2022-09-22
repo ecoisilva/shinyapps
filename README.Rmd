@@ -23,10 +23,11 @@ The goal of shinyapps is to ...
 
 ## Installation
 
-You can install the development version of shinyapps like so:
+You can install the development version of shinyapps from [GitHub](https://github.com/) with:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# install.packages("devtools")
+devtools::install_github("ecoisilva/shinyapps")
 ```
 
 ## Example

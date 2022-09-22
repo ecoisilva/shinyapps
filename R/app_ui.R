@@ -6,19 +6,27 @@
 #' @noRd
 app_ui <- function(request) {
   tagList(
+
+    # Leave this function for adding external resources
+    golem_add_external_resources(),
+
+    # UI ELEMENTS ---------------------------------------------------------
+
+    tags$html(lang = "en"),
     shinydashboardPlus::dashboardPage(
 
       options = list(sidebarExpandOnHover = TRUE),
-      title = "Study design of movement ecology studies",
+      title = "Test App",
       skin = "black",
 
+      # HEADER ------------------------------------------------------------
 
       header = shinydashboardPlus::dashboardHeader(
         titleWidth = 220,
-        title = "Test",
-        controlbarIcon = icon("gears")
-
+        title = "App"
       ), # end of dashboardHeader
+
+      # SIDEBAR -----------------------------------------------------------
 
       sidebar = shinydashboardPlus::dashboardSidebar(
         width = 220,
@@ -26,21 +34,23 @@ app_ui <- function(request) {
         shinydashboard::sidebarMenu(
           id = "tabs",
 
-          # Tab 1: Home
+          # Tab 1
           shinydashboard::menuItem(
             text = "Home",
             tabName = "about",
             icon = icon("house")
           ),
 
-          # Tab 2 and 3: Upload or simulate data
+          # Tab 2
           shinydashboard::menuItem(
             text = "Data",
             tabName = "data",
-            icon = icon("house")
-          ))
+            icon = icon("file")
+          )
 
+        ) # end of dashboardSidebar
       ), # end of dashboardSidebar
+      # BODY --------------------------------------------------------------
 
       body = shinydashboard::dashboardBody(
 
@@ -49,20 +59,20 @@ app_ui <- function(request) {
           # Tab 1 'Home'
           shinydashboard::tabItem(
             tabName = "about",
-            mod_mod1_ui("mod1_1")),
+            mod_tab_about_ui("tab_about_1")),
 
-          # Tab 2.1 'Upload data'
+          # Tab 3 'Simulate data'
           shinydashboard::tabItem(
             tabName = "data",
-            mod_mod2_ui("mod2_1"))
+            mod_tab_sims_ui("tab_sims_1"))
 
         ) # end of tabItems
       ) # end of dashboardBody
 
     ) # end of dashboardPage
-
   ) # end of tagList
 }
+
 
 #' Add external Resources to the Application
 #'
@@ -73,6 +83,7 @@ app_ui <- function(request) {
 #' @importFrom golem add_resource_path activate_js favicon bundle_resources
 #' @noRd
 golem_add_external_resources <- function() {
+
   add_resource_path(
     "www",
     app_sys("app/www")
@@ -80,14 +91,15 @@ golem_add_external_resources <- function() {
 
   tags$head(
     favicon(),
+
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "shinyapps"
+      app_title = "Test App"
     ),
 
-    # Add here other external resources
-    # for example, you can add shinyalert::useShinyalert()
-    rintrojs::introjsUI()
+    # Misc:
+    rintrojs::introjsUI(), # set up introjs
+    shinyjs::useShinyjs() # set up shinyjs
 
   )
 }
