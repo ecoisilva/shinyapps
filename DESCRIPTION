@@ -1,48 +1,24 @@
 Package: shinyapps
 Title: PKG_TITLE
 Version: 0.0.0.9000
-Authors@R: person('AUTHOR_FIRST', 'AUTHOR_LAST', email = 'AUTHOR@MAIL.COM', role = c('cre', 'aut'))
+Authors@R: 
+    person("AUTHOR_FIRST", "AUTHOR_LAST", , "AUTHOR@MAIL.COM", role = c("cre", "aut"))
 Description: PKG_DESC.
 License: MIT + file LICENSE
 URL: https://ecoisilva.github.io/movedesign/
 Depends: 
     R (>= 3.5.0)
 Imports: 
-    bayestestR,
-    bsplus,
     config (>= 0.3.1),
-    crayon,
-    ctmm (>= 0.6.1),
-    ctmmweb,
-    data.table,
     dplyr,
     fontawesome,
-    ggiraph,
-    ggplot2,
     golem (>= 0.3.2),
-    htmltools,
-    minpack.lm,
-    plyr,
-    reactable,
     rintrojs,
-    scales,
     shiny (>= 1.7.1),
-    shinyalert,
-    shinybusy,
-    shinycssloaders,
     shinydashboard,
     shinydashboardPlus,
-    shinyFeedback,
     shinyjs,
-    shinyWidgets,
-    stats,
-    stringr,
-    utils,
-    viridis
-Suggests: 
-    knitr,
-    rmarkdown,
-    shinytest2
+    stats
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
